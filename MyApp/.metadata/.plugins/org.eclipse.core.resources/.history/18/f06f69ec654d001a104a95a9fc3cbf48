@@ -1,0 +1,115 @@
+package hllo;
+
+public class HexToBinary {
+
+    static final String _0 = "0000";
+    static final String _1 = "0001";
+    static final String _2 = "0010";
+    static final String _3 = "0011";
+    static final String _4 = "0100";
+    static final String _5 = "0101";
+    static final String _6 = "0110";
+    static final String _7 = "0111";
+    static final String _8 = "1000";
+    static final String _9 = "1001";
+    static final String _A = "1010";
+    static final String _B = "1011";
+    static final String _C = "1100";
+    static final String _D = "1101";
+    static final String _E = "1110";
+    static final String _F = "1111";
+
+    public static String convert(String hexValue)
+    {
+        StringBuffer binaryBuffer = new StringBuffer();
+        for(int position = 0; position< hexValue.length(); position ++)
+        {
+            if(hexValue.charAt(position) == '0')
+                binaryBuffer.append(_0);
+            else if(hexValue.charAt(position) == '1')
+                binaryBuffer.append(_1);
+            else if(hexValue.charAt(position) == '2')
+                binaryBuffer.append(_2);
+            else if(hexValue.charAt(position) == '3')
+                binaryBuffer.append(_3);
+            else if(hexValue.charAt(position) == '4')
+                binaryBuffer.append(_4);
+            else if(hexValue.charAt(position) == '5')
+                binaryBuffer.append(_5);
+            else if(hexValue.charAt(position) == '6')
+                binaryBuffer.append(_6);
+            else if(hexValue.charAt(position) == '7')
+                binaryBuffer.append(_7);
+            else if(hexValue.charAt(position) == '8')
+                binaryBuffer.append(_8);
+            else if(hexValue.charAt(position) == '9')
+                binaryBuffer.append(_9);
+            else if(hexValue.charAt(position) == 'A')
+                binaryBuffer.append(_A);
+            else if(hexValue.charAt(position) == 'B')
+                binaryBuffer.append(_B);
+            else if(hexValue.charAt(position) == 'C')
+                binaryBuffer.append(_C);
+            else if(hexValue.charAt(position) == 'D')
+                binaryBuffer.append(_D);
+            else if(hexValue.charAt(position) == 'E')
+                binaryBuffer.append(_E);
+            else binaryBuffer.append(_F);
+
+        }
+        return binaryBuffer.toString();
+    }
+
+    public static String reverseConvert(String binaryValue)
+    {
+        StringBuffer hexBuffer = new StringBuffer();
+        String binaryBlock=null;
+
+        for(int position = 0; position< binaryValue.length(); position+=4)
+        {
+            binaryBlock = binaryValue.substring(position,position+4);
+
+            if(binaryBlock.equals(_0))
+                hexBuffer.append(0);
+            else if(binaryBlock.equals(_1))
+                hexBuffer.append(1);
+            else if(binaryBlock.equals(_2))
+                hexBuffer.append(2);
+            else if(binaryBlock.equals(_3))
+                hexBuffer.append(3);
+            else if(binaryBlock.equals(_4))
+                hexBuffer.append(4);
+            else if(binaryBlock.equals(_5))
+                hexBuffer.append(5);
+            else if(binaryBlock.equals(_6))
+                hexBuffer.append(6);
+            else if(binaryBlock.equals(_7))
+                hexBuffer.append(0);
+            else if(binaryBlock.equals(_8))
+                hexBuffer.append(0);
+            else if(binaryBlock.equals(_9))
+                hexBuffer.append(0);
+            else if(binaryBlock.equals(_A))
+                hexBuffer.append(0);
+            else if(binaryBlock.equals(_B))
+                hexBuffer.append(0);
+            else if(binaryBlock.equals(_C))
+                hexBuffer.append(0);
+            else if(binaryBlock.equals(_D))
+                hexBuffer.append(0);
+            else if(binaryBlock.equals(_E))
+                hexBuffer.append(0);
+            else
+                hexBuffer.append(_F);
+
+        }
+        return hexBuffer.toString();
+    }
+
+public static void main(String[] args) {
+	String templateMsg="30323030F23A448108E0800000000000040001003139323232323030313030383838383838383838383930303030303030303030303031303030303032303632303031323338353536363731333233333530323036313031373438313430313930353036313131313131303933373133323333353130444E423538383536444E4239313938363535353838353653415244415220524F41442020202020202020202020204D41445241532020202020202020494E203335363131323232323232323232323231313730303130303234383030323030334D4F4230343530303753686976616E6930343930303334373530353030313931313131303031303039393939393939393939303531303034544553543035363030334D4F4230353930313148444643363430373735333036323031313232323232323232323232";
+	System.out.println(convert(templateMsg));
+}
+
+}
+
